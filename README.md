@@ -37,6 +37,16 @@ sudo apt install ffmpeg
 
 ### 2. 安装Python依赖
 
+**方法一：使用自动安装脚本（推荐）**
+```bash
+# macOS/Linux
+./install.sh
+
+# Windows
+install.bat
+```
+
+**方法二：手动安装**
 ```bash
 pip install -r requirements.txt
 ```
@@ -46,9 +56,45 @@ pip install -r requirements.txt
 pip install yt-dlp requests
 ```
 
+### 3. 设置执行权限（macOS/Linux）
+
+```bash
+# 给脚本添加执行权限
+chmod +x run.sh install.sh
+```
+
 ## 使用方法
 
-### 命令行使用
+### 推荐使用方式：run.sh 脚本（macOS/Linux）
+
+**一键启动脚本，自动管理虚拟环境：**
+
+```bash
+# 交互式菜单模式
+./run.sh
+
+# 直接下载模式（使用简化版提取器）
+./run.sh "https://www.bilibili.com/video/BV1xx411c7mD"
+```
+
+**交互式菜单选项：**
+- `1` - 简化版提取器（推荐，速度快）
+- `2` - 完整版提取器（功能全面）
+- `3` - 高级版提取器（支持并发下载）
+- `4` - M4A转MP3工具
+- `5` - MP3文件重命名工具
+
+**使用示例：**
+```bash
+# 启动交互式菜单
+./run.sh
+# 然后选择 1，输入视频URL
+
+# 或者直接下载
+./run.sh "https://www.bilibili.com/video/BV1xx411c7mD"
+```
+
+### 直接命令行使用
 
 ```bash
 # 交互式输入URL
@@ -73,20 +119,41 @@ python bilibili_audio_extractor.py "https://www.bilibili.com/video/BV1xx411c7mD"
 
 ## 使用示例
 
-### 示例1：下载单个视频音频
+### 示例1：使用run.sh脚本（推荐）
+```bash
+# 交互式菜单
+./run.sh
+# 选择 1（简化版），然后输入URL
+
+# 直接下载
+./run.sh "https://www.bilibili.com/video/BV1xx411c7mD"
+```
+
+### 示例2：下载单个视频音频
 ```bash
 python bilibili_audio_extractor.py "https://www.bilibili.com/video/BV1xx411c7mD"
 ```
 
-### 示例2：下载合集音频
+### 示例3：下载合集音频
 ```bash
 python bilibili_audio_extractor.py "https://www.bilibili.com/video/BV1xx411c7mD?p=1"
 ```
 
-### 示例3：交互式使用
+### 示例4：交互式使用
 ```bash
 python bilibili_audio_extractor.py
 # 然后输入URL
+```
+
+### 示例5：使用工具功能
+```bash
+# 转换M4A为MP3
+./run.sh
+# 选择 4
+
+# 重命名MP3文件（去除无关信息）
+./run.sh
+# 选择 5
 ```
 
 ## 程序输出示例
@@ -116,10 +183,12 @@ python bilibili_audio_extractor.py
 
 ## 注意事项
 
-1. **网络连接**：确保网络连接稳定，某些视频可能需要较长下载时间
-2. **存储空间**：确保有足够的磁盘空间存储音频文件
-3. **版权声明**：请遵守相关版权法律，仅用于个人学习和研究
-4. **文件命名**：程序会自动处理文件名中的特殊字符
+1. **推荐使用run.sh**：自动管理虚拟环境，避免依赖冲突，提供便捷的交互式菜单
+2. **网络连接**：确保网络连接稳定，某些视频可能需要较长下载时间
+3. **存储空间**：确保有足够的磁盘空间存储音频文件
+4. **版权声明**：请遵守相关版权法律，仅用于个人学习和研究
+5. **文件命名**：程序会自动处理文件名中的特殊字符
+6. **脚本权限**：首次使用前请确保给run.sh和install.sh添加执行权限（`chmod +x run.sh install.sh`）
 
 ## 故障排除
 
