@@ -1,0 +1,27 @@
+{
+  "output_directory": "./downloads",
+  "audio_format": "mp3",
+  "audio_quality": "192",
+  "filename_template": "%(playlist_index)02d_%(title)s.%(ext)s",
+  "max_concurrent_downloads": 3,
+  "retry_attempts": 3,
+  "download_options": {
+    "writeinfojson": true,
+    "writethumbnail": false,
+    "writesubtitles": false,
+    "writeautomaticsub": false
+  },
+  "postprocessor_options": {
+    "preferredcodec": "mp3",
+    "preferredquality": "192"
+  },
+  "proxy": {
+    "enabled": false,
+    "http_proxy": "",
+    "https_proxy": ""
+  },
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+  "headers": {
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8"
+  }
+}
